@@ -151,3 +151,19 @@ There is another mapping called `agentIdToIndex` that keeps track of each agent'
 ### Wounded/Healing agent IDs per round
 
 There is a maximum limit of 30 for wounded and healing agents per round. `woundedAgentIdsPerRound` and `healingAgentIdsPerRound` are 2 fixed sized array of 31 and the first element is the arrays' length.
+
+## Running Tests
+
+```
+git clone git@github.com:sherlock-audit/2023-10-looksrare.git
+cd 2023-10-looksrare
+
+git submodule update --init --recursive
+cd contracts-infiltration
+yarn
+
+forge build
+
+export TENDERLY_ACCESS_KEY={key}
+forge test
+```
