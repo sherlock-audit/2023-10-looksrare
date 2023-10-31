@@ -40,17 +40,17 @@ flowchart TD
 
     ROUND_3 -->|Many rounds later...| ROUND_WITH_50_ACTIVE_AGENTS_LEFT_PRE_INSTA_KILL[Round ID: X\n50 active agents\nN wounded agents\nY killed/escaped agents]
 
-    ROUND_WITH_50_ACTIVE_AGENTS_LEFT_PRE_INSTA_KILL -->|insta-kill| ROUND_WITH_50_ACTIVE_AGENTS_LEFT_POST_INSTA_KILL[Round ID: X\n50 active agents\n0 wounded agents\nN + Y = 9500 killed/escaped agents]
+    ROUND_WITH_50_ACTIVE_AGENTS_LEFT_PRE_INSTA_KILL -->|insta-kill| ROUND_WITH_50_ACTIVE_AGENTS_LEFT_POST_INSTA_KILL[Round ID: X\n50 active agents\n0 wounded agents\nN + Y = 9950 killed/escaped agents]
 
     ROUND_WITH_50_ACTIVE_AGENTS_LEFT_POST_INSTA_KILL -->|requestRandomWords| CHAINLINK_VRF_3
 
-    CHAINLINK_VRF_3 -->|rawFulfillRandomWords| ROUND_WITH_49_ACTIVE_AGENTS_LEFT[Round ID: X + 1\n49 active agents\n0 wounded agents\n9501 killed/escaped agents]
+    CHAINLINK_VRF_3 -->|rawFulfillRandomWords| ROUND_WITH_49_ACTIVE_AGENTS_LEFT[Round ID: X + 1\n49 active agents\n0 wounded agents\n9951 killed/escaped agents]
 
     ACTIVE_AGENT_IN_TOP_50[Active agent in top 50] -->|heal reverted|ROUND_WITH_49_ACTIVE_AGENTS_LEFT
 
     ROUND_WITH_49_ACTIVE_AGENTS_LEFT -->|requestRandomWords| CHAINLINK_VRF_4
     ACTIVE_AGENT_IN_TOP_50[Active agent in top 50] -->|escape|ROUND_WITH_47_ACTIVE_AGENTS_LEFT
-    CHAINLINK_VRF_4 -->|rawFulfillRandomWords| ROUND_WITH_47_ACTIVE_AGENTS_LEFT[Round ID: X + 2\n47 active agents\n0 wounded agents\n9503 killed/escaped agents]
+    CHAINLINK_VRF_4 -->|rawFulfillRandomWords| ROUND_WITH_47_ACTIVE_AGENTS_LEFT[Round ID: X + 2\n47 active agents\n0 wounded agents\n9953 killed/escaped agents]
 
     ROUND_WITH_47_ACTIVE_AGENTS_LEFT -->|46 rounds later...| FINAL_ROUND[Round ID: X + 49\n1 active agent\n9999 killed/escaped agents]
 
